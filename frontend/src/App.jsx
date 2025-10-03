@@ -13,7 +13,7 @@ function App() {
   // --- NEW STATE: to store the list of sources ---
   const [sources, setSources] = useState([]); 
 
- const API_URL = 'https://grounded-analyst-api.onrender.com/';
+  const API_URL = 'https://grounded-analyst-api.onrender.com/api/analyze';
 
   const handleAnalysis = async () => {
     if (!query.trim()) {
