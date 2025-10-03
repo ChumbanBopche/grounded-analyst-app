@@ -1,0 +1,207 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+}
+
+.App-header {
+  padding: 20px;
+  color: #172b4d;
+  text-align: center;
+}
+
+/* Main container */
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;   /* Prevents text from stretching too wide */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Input area */
+.query-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* Analyze button */
+.analyze-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-bottom: 30px;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.analyze-button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Analysis output */
+.analysis-output {
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  overflow-x: auto;  /* Prevents horizontal overflow on long text */
+}
+
+.analysis-output h2 {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.analysis-output p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Markdown content */
+.markdown-content {
+  padding-bottom: 20px;
+}
+
+/* Sources list */
+.sources-list {
+  margin-top: 20px;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+  text-align: left;
+}
+
+.sources-list h3 {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.sources-list ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.9em;
+}
+
+.sources-list li {
+  margin-bottom: 5px;
+}
+
+.sources-list a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------- */
+/* RESPONSIVENESS RULES */
+/* ----------------------------- */
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 95%;   /* Take almost full width on tablets */
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;  /* Full width on small screens */
+    padding: 10px;
+    border-radius: 0; /* Optional: flat edges on mobile */
+  }
+
+  .query-input {
+    font-size: 14px;
+  }
+
+  .analyze-button {
+    width: 100%;      /* Button spans full width on mobile */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .analysis-output {
+    font-size: 14px;  /* Smaller font for readability */
+    padding: 10px;
+  }
+}
+
+.App-footer {
+    padding: 20px 0;
+    margin-top: 40px;
+    color: #6c757d;
+    font-size: 0.85em;
+    border-top: 1px solid #e0e0e0;
+    background-color: #ffffff; 
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.App-footer p {
+    margin: 3px 0;
+}
+
+/* --- NEW: Loading Indicator Styles --- */
+
+.loading-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    color: #007bff;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007bff; /* The color that moves */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Apply the spin animation */
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustment for the footer */
+@media (max-width: 768px) {
+    .App-footer {
+        margin-top: 20px;
+    }
+}

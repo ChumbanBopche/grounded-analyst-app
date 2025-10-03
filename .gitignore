@@ -1,0 +1,17 @@
+# Dependency directories
+/backend/venv
+/backend/__pycache__
+/backend/.pytest_cache
+/frontend/node_modules
+/frontend/dist
+
+# Environment and security
+.env
+.DS_Store
+
+# Python
+*.pyc
+/backend/.env
+
+# OS generated files
+*~
