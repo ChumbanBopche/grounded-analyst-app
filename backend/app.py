@@ -17,7 +17,7 @@ app = Flask(__name__)
 # Enable CORS for the frontend running on a different port (e.g., React's 3000)
 CORS(app, resources={r"/api/*": {"origins": [
     "http://localhost:5173",          # Local testing
-    "https://grounded-analyst-app.vercel.app/",
+    "https://grounded-analyst-app.vercel.app",
 ]}})
 
 # --- Analyst Persona and Instruction ---
